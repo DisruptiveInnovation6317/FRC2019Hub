@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -42,7 +43,7 @@ namespace FRC2019Hub
             //It sets the location in the first line
             //The next lines edit the starting info to actually have the game render
             //just change the String to change the path to the game
-            FileInfo mafiaFileInfo = new FileInfo(Directory.GetCurrentDirectory() + "/games/spacemafia/SpaceMafia.exe");
+            FileInfo mafiaFileInfo = new FileInfo(Directory.GetCurrentDirectory() + "/games/spacemafia/C-Sharp-Final-Project.exe");
             ProcessStartInfo info = new ProcessStartInfo(mafiaFileInfo.FullName);
             info.RedirectStandardOutput = true;
             info.RedirectStandardError = true;
@@ -72,8 +73,7 @@ namespace FRC2019Hub
         //the next methods just check to see if the process is still running
         //if it is, this main form stays hidden
         //if it isn't, this main for comes back so you can choose more options
-
-        private void MafiaPicBtn_Click(object sender, EventArgs e)
+        private void mafiaBox_Click(object sender, EventArgs e)
         {
             bool running = true;
             startMafia();
@@ -81,8 +81,10 @@ namespace FRC2019Hub
             {
                 //change process name to the name of the .exe you are running to check if it running
                 //must be in a loop
-                if (Process.GetProcessesByName("SpaceMafia").Length > 0)
+                if (Process.GetProcessesByName("C-Sharp-Final-Project").Length > 0)
+                {
                     this.Hide();
+                }
                 else
                 {
                     this.Show();
@@ -92,7 +94,7 @@ namespace FRC2019Hub
             }
         }
 
-        private void InvaderPicBtn_Click(object sender, EventArgs e)
+        private void invaderBox_Click(object sender, EventArgs e)
         {
             bool running = true;
             startInvaders();
@@ -108,7 +110,7 @@ namespace FRC2019Hub
             }
         }
 
-        private void SimPicBtn_Click(object sender, EventArgs e)
+        private void simBox_Click(object sender, EventArgs e)
         {
             bool running = true;
             startSim();
