@@ -130,12 +130,6 @@ namespace FRC2019Hub
             Process website = new Process();
             website.StartInfo.FileName = Directory.GetCurrentDirectory() + "/web/index.html";
             website.Start();
-            //hids main form while website is up
-            while (!website.HasExited)
-            {
-                this.Hide();
-            }
-            this.Show();
         }
     }
 }
