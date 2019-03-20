@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainMenu));
+            this.webPicBtn = new System.Windows.Forms.PictureBox();
             this.simPicBtn = new System.Windows.Forms.PictureBox();
             this.simBox = new System.Windows.Forms.PictureBox();
             this.mafiaPicBtn = new System.Windows.Forms.PictureBox();
             this.invaderPicBtn = new System.Windows.Forms.PictureBox();
             this.mafiaBox = new System.Windows.Forms.PictureBox();
             this.invaderBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.webPicBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simPicBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mafiaPicBtn)).BeginInit();
@@ -41,6 +44,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.mafiaBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invaderBox)).BeginInit();
             this.SuspendLayout();
+            // 
+            // webPicBtn
+            // 
+            this.webPicBtn.Image = ((System.Drawing.Image)(resources.GetObject("webPicBtn.Image")));
+            this.webPicBtn.Location = new System.Drawing.Point(-3, 286);
+            this.webPicBtn.Name = "webPicBtn";
+            this.webPicBtn.Size = new System.Drawing.Size(800, 100);
+            this.webPicBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.webPicBtn.TabIndex = 6;
+            this.webPicBtn.TabStop = false;
+            this.webPicBtn.Click += new System.EventHandler(this.WebPicBtn_Click);
             // 
             // simPicBtn
             // 
@@ -109,7 +123,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 289);
+            this.ClientSize = new System.Drawing.Size(794, 385);
+            this.Controls.Add(this.webPicBtn);
             this.Controls.Add(this.simPicBtn);
             this.Controls.Add(this.simBox);
             this.Controls.Add(this.mafiaPicBtn);
@@ -119,6 +134,7 @@
             this.Name = "mainMenu";
             this.Text = "mainMenu";
             this.Load += new System.EventHandler(this.MainMenu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.webPicBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simPicBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mafiaPicBtn)).EndInit();
@@ -138,5 +154,6 @@
         private System.Windows.Forms.PictureBox mafiaPicBtn;
         private System.Windows.Forms.PictureBox simPicBtn;
         private System.Windows.Forms.PictureBox simBox;
+        private System.Windows.Forms.PictureBox webPicBtn;
     }
 }
